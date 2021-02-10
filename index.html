@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <title>Animacija</title>
+    <style>
+        .box {
+            position: absolute;
+            width: 600px;
+            height: 500px;
+            margin: 64px auto;
+            background-color: black;
+            top: 20px;
+            right: 20px;
+            left: 20px;
+            bottom: 20px;
+
+        }
+
+        #gradijent {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin: 180px auto;
+            background: linear-gradient( #fb5dad, #55fb9f, #b97aff);
+           
+           filter: drop-shadow(1px 1px 70px rgb(180, 241, 196)) opacity(70%);
+      
+            animation: animacija-1 1s linear infinite;
+        }
+        #gradijent::after {
+            content: " ";
+            position: absolute;
+             /*width: 150px;
+             width: 150px;*/
+             border-radius: 50%;
+            top: 20px;
+            right: 20px;
+            left: 20px;
+            bottom: 20px;
+             background-color:#050210;
+            
+        }
+        #krug {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 230px auto;
+            background: rgb(12, 1, 31);
+            top: 20px;
+            right: 20px;
+            left: 20px;
+            bottom: 20px;
+
+            animation: animacija-2 1s linear infinite;
+        }
+
+        @keyframes animacija-1 {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+            
+        }
+
+        @keyframes animacija-2 {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1.5);
+            }
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <div class="box" id="kvadrat"></div>
+        <div id="gradijent"></div>
+        <div id="krug"></div>
+     </div>
+</body>
+</html>
